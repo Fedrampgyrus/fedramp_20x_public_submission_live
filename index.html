@@ -2080,7 +2080,7 @@ async function getAuthorizationSummary() {
                 
                 <div style="background: rgba(245, 158, 11, 0.1); border: 2px solid var(--warning-500); border-radius: 10px; padding: 25px; margin-bottom: 30px; color: var(--text-primary);">
                     <h4 style="color: var(--warning-600); margin-bottom: 15px;">🚨 Emergency Security Hotline</h4>
-                    <div><strong>Phone:</strong> +1 (571) 665-5287</div>
+                    <div><strong>Phone:</strong> +1 (804) 320 -1414 </div>
                     <div><strong>Email:</strong> security@gyrus.com</div>
                     <div><strong>Response SLA:</strong> 1 hour for Category 1-2 incidents</div>
                 </div>
@@ -3931,9 +3931,6 @@ function cleanAssertionReason(reason, status) {
             const ksi = allKsis.find(k => k.id === ksiId);
             if (!ksi) return;
 
-            const issueTitle = encodeURIComponent(`[KSI Failure] ${ksi.id}: ${ksi.description.substring(0, 60)}...`);
-            const issueBody = encodeURIComponent(`## KSI Failure Report
-
 **KSI ID:** ${ksi.id}
 **Category:** ${ksi.category}
 **Status:** ${ksi.status.toUpperCase()}
@@ -3945,11 +3942,6 @@ ${ksi.description}
 - **Commands Executed:** ${ksi.commands_executed || 0}
 - **CLI Command:** \`${ksi.cli_command || 'N/A'}\`
 
-### Failure Reason
-${ksi.assertion_reason || 'No detailed reason provided'}
-
-### Expected Resolution
-Please provide guidance on how to remediate this KSI failure.`);
 
             const githubUrl = `https://github.com/fedrampgyrus/fedramp_20x_public_submission_live/issues/new?title=${issueTitle}&body=${issueBody}`;
             window.open(githubUrl, '_blank');
@@ -4310,3 +4302,5 @@ Please provide guidance on how to remediate this KSI failure.`);
 </body>
 </html>
                 
+
+
