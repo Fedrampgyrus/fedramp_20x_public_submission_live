@@ -2008,7 +2008,7 @@
 // Fetch current compliance status
 async function getAuthorizationSummary() {
     const base = 'https://fedrampgyrus.github.io/fedramp_20x_public_submission_live';
-    const response = await fetch(`${base}/unified_ksi_validations.json`);
+    const response = await fetch(`${base}/`);
     const data = await response.json();
     
     return {
@@ -2206,7 +2206,7 @@ async function getAuthorizationSummary() {
         async function loadCommandRegister() {
             try {
                 console.log('📋 Attempting to load comprehensive command register...');
-                const response = await fetch('./cli_command_register.json');
+                const response = await fetch('./');
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
@@ -2982,7 +2982,7 @@ ${enhancementList}
             window.open(githubUrl, '_blank');
         }
 
-        // ✅ ENHANCED: Initialize with sample data showcasing KSI-CNA-02
+        // ✅ ENHANCED: Initialize with sample data showcasing KSI-xxxx
         function initializeSampleData() {
             allKsis = [
                 {
@@ -3221,7 +3221,7 @@ ${enhancementList}
                 
                 // ✅ STEP 2: Load validation data
                 console.log('🔄 Loading validation data...');
-                const response = await fetch('./unified_ksi_validations.json');
+                const response = await fetch('./');
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
@@ -3497,7 +3497,7 @@ function cleanAssertionReason(reason, status) {
             } else if (type === 'sample') {
                 notification.style.background = 'rgba(245, 158, 11, 0.9)';
                 notification.style.color = 'white';
-                notification.textContent = '⚠️ Using sample data with KSI-CNA-02 showcase';
+                notification.textContent = '⚠️ Using sample data with XXX showcase';
             } else if (type === 'error') {
                 notification.style.background = 'rgba(239, 68, 68, 0.9)';
                 notification.style.color = 'white';
@@ -3949,7 +3949,7 @@ ${ksi.description}
 
         function downloadJSON() {
     // Fetch the actual JSON file and trigger download
-    fetch('./unified_ksi_validations.json')
+    fetch('’)
         .then(response => response.json())
         .then(data => {
             const jsonString = JSON.stringify(data, null, 2);
@@ -3966,7 +3966,7 @@ ${ksi.description}
 }
         async function viewFailedReport() {
             try {
-                const response = await fetch('./failed_ksi_report_readable.md');
+                const response = await fetch('.');
                 if (response.ok) {
                     const markdown = await response.text();
                     
